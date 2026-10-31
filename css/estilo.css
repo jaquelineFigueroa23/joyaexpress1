@@ -1,0 +1,384 @@
+/* Estilos Personalizados - JoyaExpress */
+
+:root {
+    --primary-color: #007bff;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --dark-color: #343a40;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* LOGIN */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header i {
+    font-size: 48px;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login-header h2 {
+    margin: 0;
+    color: var(--dark-color);
+}
+
+.login-header p {
+    margin: 5px 0 0 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* DASHBOARD */
+.stat-card {
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card .card-body {
+    padding: 20px;
+}
+
+.stat-card h5 {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-card h5 i {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.stat-card h2 {
+    margin: 10px 0 0 0;
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+/* NAVEGACIÓN */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar-brand i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.nav-link {
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* FORMULARIOS */
+.form-label {
+    font-weight: 500;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    font-size: 14px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* TABLAS */
+.table {
+    font-size: 14px;
+}
+
+.table thead {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* ESTADOS */
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.badge-estado-recibido {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.badge-estado-revisado {
+    background-color: #007bff;
+    color: white;
+}
+
+.badge-estado-empacado {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.badge-estado-maleta {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.badge-estado-enviado {
+    background-color: #20c997;
+    color: white;
+}
+
+.badge-estado-entregado {
+    background-color: #28a745;
+    color: white;
+}
+
+.badge-estado-incidencia {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* TARJETAS */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-title {
+    margin: 0;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+/* BOTONES */
+.btn {
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 8px 20px;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+/* ALERTAS */
+.alert {
+    border-radius: 5px;
+    border: none;
+    padding: 12px 16px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* SECCIONES */
+.seccion {
+    padding: 20px 0;
+}
+
+h2 {
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h5 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* TABS */
+.nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.nav-tabs .nav-link {
+    color: #666;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 10px 20px;
+}
+
+.nav-tabs .nav-link:hover {
+    border-bottom-color: var(--primary-color);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: transparent;
+    border-bottom-color: var(--primary-color);
+}
+
+/* QR CODE */
+.qr-container {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.qr-container canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    .login-box {
+        margin: 20px;
+    }
+    
+    .stat-card .card-body {
+        padding: 15px;
+    }
+    
+    .stat-card h2 {
+        font-size: 24px;
+    }
+    
+    .table {
+        font-size: 12px;
+    }
+    
+    .btn {
+        padding: 6px 15px;
+        font-size: 13px;
+    }
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* LOADING */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
