@@ -5,7 +5,11 @@ let csrfTokenJoya = null;
 async function obtenerCsrfJoya() {
     if (csrfTokenJoya) return csrfTokenJoya;
     const r = await fetchOriginalJoya('/joyaexpress-system/backend/api/auth.php?accion=csrf', {credentials:'same-origin',cache:'no-store'});
-    const d = await r.json(); csrfTokenJoya = d.datos.token; return csrfTokenJoya;
+    const d = await leerRespuestaAuth(r);
+    if (!d.exito || !d.datos || !d.datos.token) {
+        throw new Error(d.mensaje || 'No se pudo iniciar la sesión segura.');
+    }
+    csrfTokenJoya = d.datos.token; return csrfTokenJoya;
 }
 window.fetch = async function(recurso, opciones={}) {
     const metodo=(opciones.method||'GET').toUpperCase();

@@ -25,9 +25,27 @@ document.addEventListener('DOMContentLoaded', function() {
 // AUTENTICACIÓN
 // ===============================================
 
+async function leerRespuestaAuth(response) {
+    const texto = await response.text();
+    let datos;
+    try {
+        datos = JSON.parse(texto);
+    } catch {
+        console.error('Respuesta inválida de autenticación. HTTP:', response.status);
+        throw new Error(`El servidor no devolvió JSON válido (HTTP ${response.status}). Verifique la dirección del sistema y que Apache y MySQL estén iniciados.`);
+    }
+    if (!datos || typeof datos.exito !== 'boolean') {
+        throw new Error('El servidor devolvió una respuesta de autenticación inválida.');
+    }
+    if (!response.ok) {
+        throw new Error(datos.mensaje || `Error del servidor (HTTP ${response.status}).`);
+    }
+    return datos;
+}
+
 function verificarSesion() {
     fetch(`${API_URL}/auth.php?accion=estado`)
-        .then(response => response.json())
+        .then(leerRespuestaAuth)
         .then(data => {
             if (data.exito) {
                 mostrarDashboard();
@@ -56,7 +74,7 @@ function manejarLogin(e) {
         },
         body: JSON.stringify({ email, password })
     })
-    .then(response => response.json())
+    .then(leerRespuestaAuth)
     .then(data => {
         if (data.exito) {
             usuarioActual = data.datos.usuario;
@@ -70,7 +88,7 @@ function manejarLogin(e) {
         }
     })
     .catch(error => {
-        errorDiv.textContent = 'Error en la conexión: ' + error;
+        errorDiv.textContent = error.message || 'No se pudo conectar con el servidor.';
         errorDiv.style.display = 'block';
     });
 }
